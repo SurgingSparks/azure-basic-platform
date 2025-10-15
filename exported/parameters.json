@@ -1,0 +1,147 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "australiasoutheast"
+        },
+        "extendedLocation": {
+            "value": {}
+        },
+        "virtualNetworkName": {
+            "value": "sandbox-vnet"
+        },
+        "tagsByResource": {
+            "value": {
+                "Microsoft.Network/virtualNetworks": {},
+                "Microsoft.Network/ddosProtectionPlans": {},
+                "Microsoft.Network/publicIPAddresses": {},
+                "Microsoft.Network/azureFirewalls": {},
+                "Microsoft.Network/bastionHosts": {},
+                "Microsoft.Network/natGateways": {},
+                "Microsoft.Network/publicIPPrefixes": {},
+                "Microsoft.Network/networkSecurityGroups": {}
+            }
+        },
+        "addressSpace": {
+            "value": {
+                "addressPrefixes": [
+                    "10.0.0.0/16"
+                ]
+            }
+        },
+        "natGatewaysWithNewPublicIpAddress": {
+            "value": []
+        },
+        "natGatewaysWithoutNewPublicIpAddress": {
+            "value": []
+        },
+        "natGatewayPublicIpAddressesNewNames": {
+            "value": []
+        },
+        "networkSecurityGroupsNew": {
+            "value": []
+        },
+        "subnets": {
+            "value": [
+                {
+                    "name": "public",
+                    "properties": {
+                        "addressPrefixes": [
+                            "10.0.1.0/24"
+                        ],
+                        "privateEndpointNetworkPolicies": "Disabled"
+                    }
+                },
+                {
+                    "name": "private",
+                    "properties": {
+                        "addressPrefixes": [
+                            "10.0.2.0/24"
+                        ],
+                        "defaultOutboundAccess": false,
+                        "privateEndpointNetworkPolicies": "Disabled"
+                    }
+                }
+            ]
+        },
+        "ddosProtectionPlanEnabled": {
+            "value": false
+        },
+        "firewallEnabled": {
+            "value": false
+        },
+        "firewallSkuTier": {
+            "value": "Standard"
+        },
+        "firewallPolicyIsNew": {},
+        "firewallPolicyId": {},
+        "firewallPolicyTier": {},
+        "firewallPublicIpAddressIsNew": {
+            "value": false
+        },
+        "firewallPublicIpAddressId": {
+            "value": ""
+        },
+        "bastionEnabled": {
+            "value": false
+        },
+        "bastionPublicIpAddressIsNew": {
+            "value": false
+        },
+        "bastionPublicIPAddressId": {
+            "value": ""
+        },
+        "bastionNsgIsNew": {},
+        "bastionNsgId": {},
+        "encryptionEnabled": {
+            "value": false
+        },
+        "encryptionEnforcement": {
+            "value": "AllowUnencrypted"
+        },
+        "addressSpaceStartingAddressChanged": {
+            "value": false
+        },
+        "addressSpaceAddressSizeChanged": {
+            "value": false
+        },
+        "ipv6Enabled": {
+            "value": false
+        },
+        "defaultSubnetChanged": {
+            "value": true
+        },
+        "subnetsInfo": {
+            "value": [
+                {
+                    "cidr": "10.0.1.0/24",
+                    "name": "Default",
+                    "natGw": "none",
+                    "nsg": "none",
+                    "udr": "none"
+                },
+                {
+                    "cidr": "10.0.2.0/24",
+                    "name": "Default",
+                    "natGw": "none",
+                    "nsg": "none",
+                    "udr": "none"
+                }
+            ]
+        },
+        "subnetCount": {
+            "value": 2
+        },
+        "ipamPools": {
+            "value": []
+        },
+        "networkManager": {},
+        "createNetworkManager": {
+            "value": false
+        },
+        "networkManagerName": {},
+        "avnmSubscriptionId": {},
+        "avnmResourceGroup": {}
+    }
+}
