@@ -20,7 +20,7 @@ param subnets array = [
         '10.1.1.0/24'
       ]
     }
-  },
+  }
   {
     name: 'private'
     properties: {
@@ -41,4 +41,4 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2024-01-01' = {
 }
 
 output vnetId string = virtualNetwork.id
-output subnetIds array = [for s in virtualNetwork.properties.subnets: resourceId('Microsoft.Network/virtualNetworks/subnets', virtualNetwork.name, s.name)]
+output subnetIds array = [for s in subnets: resourceId('Microsoft.Network/virtualNetworks/subnets', virtualNetwork.name, s.name)]
