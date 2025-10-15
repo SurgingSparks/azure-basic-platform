@@ -1,8 +1,9 @@
 name: deploy-vnet
 on:
   workflow_dispatch:   # gives you a "Run workflow" button
-  push:
-    branches: [ main ] # auto on push if you want
+  # # auto on push if you want
+  # push:
+  #   branches: [ main ] 
 
 env:
   AZ_RG: rg-demo
@@ -12,7 +13,7 @@ env:
 jobs:
   plan:
     runs-on: ubuntu-latest
-    permissions: { id-token: write, contents: read }   # needed for OIDC
+    permissions: { id-token: write, contents: read }   
     steps:
       - uses: actions/checkout@v4
       - uses: azure/login@v2
